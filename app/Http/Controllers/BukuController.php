@@ -15,8 +15,8 @@ class BukuController extends Controller
      */
     public function index()
     {
-        $buku = Buku::all()->first();
-        dd($buku);
+        $buku = Buku::all();
+        // dd($buku);
         return view('pages.index', [
             'listbuku' => $buku
         ]);

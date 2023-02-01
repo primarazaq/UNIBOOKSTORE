@@ -44,13 +44,13 @@ class DatabaseSeeder extends Seeder
             'kota' => 'Bandung',
             'telepon' => '022-5201215'
         ]);
-        // Buku::create([
-        //     'id_buku' => 'K1001',
-        //     'kategori' => 'Keilmuan',
-        //     'nama_buku' => 'Analisis & Perancangan Sistem Informasi',
-        //     'harga' => '50000',
-        //     'stok' => '60',
-        //     'id_penerbit' => 'SP01'
-        // ]);
+        Buku::create([
+            'id_buku' => 'K1001',
+            'kategori' => 'Keilmuan',
+            'nama_buku' => 'Analisis & Perancangan Sistem Informasi',
+            'harga' => '50000',
+            'stok' => '60',
+            'id_penerbit' => 'SP01'
+        ]);
     }
 }

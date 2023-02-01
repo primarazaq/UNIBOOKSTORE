@@ -25,8 +25,7 @@
                         @foreach ($listbuku as $data)
                             <tr class="bg-white border-b ">
 
-                                <th scope="row"
-                                    class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                <th scope="row" class="py-4 px-6">
                                     {{ $loop->iteration }}
                                 </th>
                                 {{-- <td class="py-4 px-6 text-red-600  font-semibold">
@@ -37,28 +36,22 @@
                                     {{ $data->id_buku }}
                                 </td>
                                 <td class="py-4 px-6">
-
+                                    {{ $data->kategori }}
                                 </td>
                                 <td class="py-4 px-6 text-left" style="width:22%">
-
+                                    {{ $data->nama_buku }}
                                 </td>
                                 <td class="py-4 px-6">
-
+                                    {{ $data->harga }}
                                 </td>
                                 {{-- <td class="py-4 px-6">
                                 {{ $date = date('D, d M Y, H.i A',strtotime($data->created_at)) }}
                             </td> --}}
-                                <td class="py-4 px-6" style="width:12%">
-
+                                <td class="py-4 px-6">
+                                    {{ $data->stok }}
                                 </td>
                                 <td class="py-4 px-6">
-                                    <a href="/admin/home/dashboard/">
-                                        <button
-                                            class="block w-full md:w-auto rounded-lg text-lg mx-auto text-center font-medium text-mainclr dark:text-teal-500 hover:underline"
-                                            type="button">
-                                            Detail
-                                        </button>
-                                    </a>
+                                    {{ $data->id_penerbit }}
                                 </td>
                             </tr>
                         @endforeach
