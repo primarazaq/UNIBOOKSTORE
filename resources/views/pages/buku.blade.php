@@ -23,6 +23,7 @@
                             {{-- <th data-priority="6">TANGGAL MULAI</th> --}}
                             <th data-priority="6">Stok</th>
                             <th data-priority="7">Penerbit</th>
+                            <th data-priority="8">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -44,14 +45,17 @@
                                 <td class="py-4 px-6">
                                     {{ $data->harga }}
                                 </td>
-                                {{-- <td class="py-4 px-6">
-                                {{ $date = date('D, d M Y, H.i A',strtotime($data->created_at)) }}
-                            </td> --}}
                                 <td class="py-4 px-6">
                                     {{ $data->stok }}
                                 </td>
                                 <td class="py-4 px-6">
                                     {{ $data->penerbit->nama }}
+                                </td>
+                                <td class="py-4 px-6">
+                                    <div class="flex mx-auto justify-center">
+                                        @include('components.editBuku')
+                                        @include('components.delBuku')
+                                    </div>  
                                 </td>
                             </tr>
                         @endforeach

@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Buku;
-use App\Models\Penerbit;
 
-class BukuController extends Controller
+class PengadaanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +13,7 @@ class BukuController extends Controller
      */
     public function index()
     {
-        $buku = Buku::all();
-        return view('pages.index', [
-            'listbuku' => $buku
-        ]);
+        return view('pages.pengadaan');
     }
 
     /**

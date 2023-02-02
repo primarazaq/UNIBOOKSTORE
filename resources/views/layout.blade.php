@@ -17,11 +17,6 @@
                 </main>
             </div>
         </div>
-        {{-- <div class="flex-grow animate-fade">
-            <main>
-                @yield('content')
-            </main>
-        </div> --}}
     </div>
 </body>
 

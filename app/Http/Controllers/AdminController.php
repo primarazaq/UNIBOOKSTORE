@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Buku;
 use App\Models\Penerbit;
 
-class BukuController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,11 +16,25 @@ class BukuController extends Controller
     public function index()
     {
         $buku = Buku::all();
-        return view('pages.index', [
+        return view('pages.admin', [
             'listbuku' => $buku
         ]);
     }
 
+    public function indexbuku()
+    {
+        $buku = Buku::all();
+        return view('pages.buku', [
+            'listbuku' => $buku
+        ]);
+    }
+    public function indexpenerbit()
+    {
+        $buku = Buku::all();
+        return view('pages.admin', [
+            'listbuku' => $buku
+        ]);
+    }
     /**
      * Show the form for creating a new resource.
      *

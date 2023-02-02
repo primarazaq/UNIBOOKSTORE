@@ -3,7 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>UNIBOOKSTORE</title>
-
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <!-- Fonts -->
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -68,7 +68,7 @@
             /*font-bold*/
             border-radius: .25rem;
             /*rounded*/
-            background: #00A2BA !important;
+            background: blue !important;
             /*bg-indigo-500*/
             border: 1px solid transparent;
             /*border border-transparent*/
@@ -84,7 +84,7 @@
             /*font-bold*/
             border-radius: .25rem;
             /*rounded*/
-            background: #00A2BA !important;
+            background: blue !important;
             /*bg-indigo-500*/
             border: 1px solid transparent;
             /*border border-transparent*/
@@ -101,12 +101,26 @@
         /*Change colour of responsive icon*/
         table.dataTable.dtr-inline.collapsed>tbody>tr>td:first-child:before,
         table.dataTable.dtr-inline.collapsed>tbody>tr>th:first-child:before {
-            background-color: #00A2BA !important;
+            background-color: blue !important;
             /*bg-indigo-500*/
         }
     </style>
     @vite('resources/css/app.css')
 
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<!-- jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<!--Datatables -->
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+<script>
+    $(document).ready(function() {
 
+        var table = $('#TBtaskComplt').DataTable({
+                responsive: true
+            })
+            .columns.adjust()
+            .responsive.recalc();
+    });
+</script> 
 </head>

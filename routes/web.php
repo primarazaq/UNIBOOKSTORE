@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\BukuController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PengadaanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,10 +16,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages\index');
-});
 
 Route::controller(BukuController::class)->group(function () {
     Route::get('/', 'index');
+    Route::get('/home', 'index');
+});
+Route::controller(AdminController::class)->group(function () {
+    Route::get('/admin', 'index');
+    Route::get('/admin/kelolabuku', 'indexbuku');
+    Route::get('/admin/kelolapenerbit', 'indexpenerbit');
+});
+Route::controller(PengadaanController::class)->group(function () {
+    Route::get('/pengadaan', 'index');
 });

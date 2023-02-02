@@ -1,10 +1,19 @@
+<style>
+    .active{
+       color: white;
+       background-color: blue;
+       opacity: 80%;
+       fill: white;
+    }
+ </style>
+
 <div class="flex flex-col w-64 h-screen px-4 py-8 overflow-y-auto bg-white shadow-lg">
-    <h2 class="text-2xl font-semibold text-center text-blue-800">UNIBOOKSTORE</h2>
+    <a href="/home"><h2 class="text-2xl font-semibold text-center text-blue-800">UNIBOOKSTORE</h2></a>
     <div class="flex flex-col justify-between mt-6">
         <aside>
             <ul>
                 <li>
-                    <a class="flex items-center px-4 py-2 text-gray-700 bg-gray-100 rounded-md " href="#">
+                    <a href="/home" class="{{ Request::is('home') ? 'active hover:bg-blue-700' : '' }} hover:transition ease-in-out duration-300 flex items-center px-4 py-2 text-gray-600 rounded-md hover:bg-gray-200">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -15,37 +24,15 @@
                 </li>
 
                 <li>
-                    <a class="flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200"
-                        href="#">
-                        <svg version="1.1" id="Layer_1" class="w-6 fill-black" xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                            viewBox="0 0 335.436 335.436" style="enable-background:new 0 0 335.436 335.436;"
-                            xml:space="preserve">
-                            <g>
-                                <circle cx="255.436" cy="110.304" r="44.138" />
-                                <path
-                                    d="M100.725,187.928C45.096,187.928,0,233.024,0,288.653h201.45C201.45,233.024,156.354,187.928,100.725,187.928z" />
-                                <path
-                                    d="M255.436,184.442c-20.787,0-39.711,7.938-53.931,20.938c14.212,17.138,23.672,37.368,27.712,59.062h106.219
-                  C335.436,220.259,299.618,184.442,255.436,184.442z" />
-                                <circle cx="100.725" cy="102.355" r="55.573" />
-                            </g>
-                            <g>
-
+                    <a href="/admin" class="{{ Request::is('admin*') ? 'active hover:bg-blue-700' : '' }} hover:transition ease-in-out duration-300 flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16"> <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/> </svg>
                                 <span class="mx-4 font-medium">Admin</span>
                     </a>
                 </li>
 
                 <li>
-                    <a class="flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200"
-                        href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
+                    <a href="/pengadaan" class="{{ Request::is('pengadaan') ? 'active hover:bg-blue-700' : '' }} hover:transition ease-in-out duration-300 flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16"> <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/> </svg>
 
                         <span class="mx-4 font-medium">Pengadaan</span>
                     </a>
