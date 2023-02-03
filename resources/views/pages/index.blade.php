@@ -18,15 +18,15 @@
       </li>
     </ol>
   </nav>
-    <div class=" text-gray-900 tracking-wider">
+    <div class="w-full text-gray-900">
         <div class="mb-3 ml-3 font-extrabold">
             <h3>Tabel Buku</h3>
         </div>
         <!--Container-->
-        <div class="container w-full xl:w-auto mx-auto px-2">
+        <div class="container w-full mx-auto px-2">
 
             <!--Card-->
-            <div id='recipients' class="p-8 lg:mt-0 rounded-lg shadow-lg bg-white border-2">
+            <div id='recipients' class="p-8 lg:mt-0 rounded-lg shadow-lg bg-white border-2 ">
                 <table id="TBtaskComplt" class="stripe hover text-center w-full "
                     style="padding-top: 1em;  padding-bottom: 1em;">
                     <thead>
@@ -36,7 +36,6 @@
                             <th data-priority="3">Kategori</th>
                             <th data-priority="4">Nama Buku</th>
                             <th data-priority="5">Harga</th>
-                            {{-- <th data-priority="6">TANGGAL MULAI</th> --}}
                             <th data-priority="6">Stok</th>
                             <th data-priority="7">Penerbit</th>
                         </tr>
@@ -45,7 +44,7 @@
                         @foreach ($listbuku as $data)
                             <tr class="bg-white border-b ">
 
-                                <th scope="row" class="py-4 px-6">
+                                <th class="py-4 px-6">
                                     {{ $loop->iteration }}
                                 </th>
                                 <td class="py-4 px-6">
@@ -54,15 +53,12 @@
                                 <td class="py-4 px-6">
                                     {{ $data->kategori }}
                                 </td>
-                                <td class="py-4 px-6 text-left" style="width:22%">
+                                <td class="py-4 px-6">
                                     {{ $data->nama_buku }}
                                 </td>
                                 <td class="py-4 px-6">
                                     {{ $data->harga }}
                                 </td>
-                                {{-- <td class="py-4 px-6">
-                                {{ $date = date('D, d M Y, H.i A',strtotime($data->created_at)) }}
-                            </td> --}}
                                 <td class="py-4 px-6">
                                     {{ $data->stok }}
                                 </td>

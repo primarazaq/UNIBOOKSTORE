@@ -13,17 +13,17 @@
       <li aria-current="page">
         <div class="flex items-center">
           <svg class="w-6 h-6 text-blue-700" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-          <span class="text-gray-400 ml-1 md:ml-2 text-sm font-medium dark:text-gray-500">Kelola Buku</span>
+          <span class="text-gray-400 ml-1 md:ml-2 text-sm font-medium dark:text-gray-500">Kelola Penerbit</span>
         </div>
       </li>
     </ol>
   </nav>
-    <div class=" text-gray-900">
+    <div class=" text-gray-900 tracking-wider">
         <div class="flex justify-between">
             <div class="mb-3 ml-3 font-extrabold">
-                <h3>Tabel Buku</h3>
+                <h3>Tabel Penerbit</h3>
             </div>
-            @include('components.addBuku')
+            @include('components.addPenerbit')
         </div>
         <!--Container-->
         <div class="container w-full xl:w-auto mx-auto px-2">
@@ -35,45 +35,40 @@
                     <thead>
                         <tr>
                             <th data-priority="1">No</th>
-                            <th data-priority="2">ID Buku</th>
-                            <th data-priority="3">Kategori</th>
-                            <th data-priority="4">Nama Buku</th>
-                            <th data-priority="5">Harga</th>
-                            {{-- <th data-priority="6">TANGGAL MULAI</th> --}}
-                            <th data-priority="6">Stok</th>
-                            <th data-priority="7">Penerbit</th>
-                            <th data-priority="8">Action</th>
+                            <th data-priority="2">ID Penerbit</th>
+                            <th data-priority="3">Nama</th>
+                            <th data-priority="4">Alamat</th>
+                            <th data-priority="5">Kota</th>
+                            <th data-priority="6">Telepon</th>
+                            <th data-priority="7">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($listbuku as $data)
+                        @foreach ($listpenerbit as $data)
                             <tr class="bg-white border-b ">
 
                                 <th scope="row" class="py-4 px-6">
                                     {{ $loop->iteration }}
                                 </th>
                                 <td class="py-4 px-6">
-                                    {{ $data->id_buku }}
+                                    {{ $data->id_penerbit }}
                                 </td>
                                 <td class="py-4 px-6">
-                                    {{ $data->kategori }}
+                                    {{ $data->nama }}
                                 </td>
                                 <td class="py-4 px-6 text-left" style="width:22%">
-                                    {{ $data->nama_buku }}
+                                    {{ $data->alamat }}
                                 </td>
                                 <td class="py-4 px-6">
-                                    {{ $data->harga }}
+                                    {{ $data->kota }}
                                 </td>
                                 <td class="py-4 px-6">
-                                    {{ $data->stok }}
-                                </td>
-                                <td class="py-4 px-6">
-                                    {{ $data->penerbit->nama }}
+                                    {{ $data->telepon }}
                                 </td>
                                 <td class="py-4 px-6">
                                     <div class="flex mx-auto justify-center">
-                                        @include('components.editBuku')
-                                        @include('components.delBuku')
+                                        @include('components.editPenerbit')
+                                        @include('components.delPenerbit')
                                     </div>  
                                 </td>
                             </tr>
@@ -81,7 +76,6 @@
                     </tbody>
                 </table>
             </div>
-            <!--/Card-->
         </div>
     </div>  
 @endsection

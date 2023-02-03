@@ -19,5 +19,47 @@
       </li>
     </ol>
   </nav>
+  <div class=" text-gray-900">
+    <div class="flex justify-between">
+        <div class="mb-3 ml-3 font-extrabold">
+            <h3>Laporan Buku yang perlu segera dibeli</h3>
+        </div>
+    </div>
+    <!--Container-->
+    <div class="container w-full xl:w-auto mx-auto px-2">
 
+        <!--Card-->
+        <div id='recipients' class="p-8 lg:mt-0 rounded-lg shadow-lg bg-white border-2">
+            <table id="TBtaskComplt" class="stripe hover text-center w-full "
+                style="padding-top: 1em;  padding-bottom: 1em; width: 100%; ">
+                <thead>
+                    <tr>
+                        <th data-priority="1">No</th>
+                        <th data-priority="2">Judul Buku</th>
+                        <th data-priority="3">Nama Penerbit</th>
+                        <th data-priority="4">Stok</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($listbuku as $data)
+                        <tr class="bg-white border-b ">
+                            <th scope="row" class="py-4 px-6">
+                                {{ $loop->iteration }}
+                            </th>
+                            <td class="py-4 px-6">
+                                {{ $data->nama_buku }}
+                            </td>
+                            <td class="py-4 px-6">
+                                {{ $data->penerbit->nama }}
+                            </td>
+                            <td class="py-4 px-6">
+                                {{ $data->stok }}
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>  
 @endsection

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Buku;
+use App\Models\Penerbit;
 
 class PengadaanController extends Controller
 {
@@ -13,7 +15,10 @@ class PengadaanController extends Controller
      */
     public function index()
     {
-        return view('pages.pengadaan');
+        $buku = Buku::all()->sortBy('stok');
+        return view('pages.pengadaan', [
+            'listbuku' => $buku
+        ]);
     }
 
     /**

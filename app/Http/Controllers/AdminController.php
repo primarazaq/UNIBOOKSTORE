@@ -33,8 +33,10 @@ class AdminController extends Controller
     public function indexpenerbit()
     {
         $buku = Buku::all();
-        return view('pages.admin', [
-            'listbuku' => $buku
+        $penerbit = Penerbit::all();
+        return view('pages.penerbit', [
+            'listbuku' => $buku,
+            'listpenerbit' => $penerbit
         ]);
     }
     /**
@@ -55,20 +57,32 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
-        $buku = $request->validate([
-            'id_buku' => 'required',
-            'kategori' => 'required',
-            'nama_buku' => 'required',
-            'harga' => 'required',
-            'stok' => 'required',
-            'id_penerbit' => 'required'
-        ]);
+        if ($request->id_buku) {
+            $buku = $request->validate([
+                'id_buku' => 'required',
+                'kategori' => 'required',
+                'nama_buku' => 'required',
+                'harga' => 'required',
+                'stok' => 'required',
+                'id_penerbit' => 'required'
+            ]);
+            Buku::create($buku);
 
-        // $validatedData['created_at'] = User::save(['timestamps' => FALSE]);
-        Buku::create($buku);
+            return redirect('/admin/kelolabuku')->with('success', 'Data berhasil dibuat!');
+        } else {
+            $penerbit = $request->validate([
+                'id_penerbit' => 'required',
+                'nama' => 'required',
+                'alamat' => 'required',
+                'kota' => 'required',
+                'telepon' => 'required'
+            ]);
 
-        return redirect('/admin/kelolabuku')->with('success', 'Data berhasil dibuat!');
+            // $validatedData['created_at'] = User::save(['timestamps' => FALSE]);
+            Penerbit::create($penerbit);
+
+            return redirect('/admin/kelolapenerbit')->with('success', 'Data berhasil dibuat!');
+        }
     }
 
     /**
@@ -102,21 +116,35 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // dd($id);
-        $buku = $request->validate([
-            'id_buku' => 'required',
-            'kategori' => 'required',
-            'nama_buku' => 'required',
-            'harga' => 'required',
-            'stok' => 'required',
-            'id_penerbit' => 'required'
-        ]);
 
-        // $validatedData['created_at'] = User::save(['timestamps' => FALSE]);
-        Buku::where('id_buku', $id)
-            ->update($buku);
+        if ($request->id_buku) {
+            $buku = $request->validate([
+                'id_buku' => 'required',
+                'kategori' => 'required',
+                'nama_buku' => 'required',
+                'harga' => 'required',
+                'stok' => 'required',
+                'id_penerbit' => 'required'
+            ]);
 
-        return redirect('/admin/kelolabuku')->with('success', 'Data berhasil diubah!');
+            Buku::where('id_buku', $id)
+                ->update($buku);
+
+            return redirect('/admin/kelolabuku')->with('success', 'Data berhasil diubah!');
+        } else {
+            $penerbit = $request->validate([
+                'id_penerbit' => 'required',
+                'nama' => 'required',
+                'alamat' => 'required',
+                'kota' => 'required',
+                'telepon' => 'required'
+            ]);
+
+            Penerbit::where('id_penerbit', $id)
+                ->update($penerbit);
+
+            return redirect('/admin/kelolapenerbit')->with('success', 'Data berhasil diubah!');
+        }
     }
 
     /**
@@ -125,10 +153,14 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        Buku::where('id_buku', $id)->delete();
-
-        return redirect('/admin/kelolabuku')->with('success', 'Data berhasil dihapus!');
+        if ($request->id_buku) {
+            Buku::where('id_buku', $id)->delete();
+            return redirect('/admin/kelolabuku')->with('success', 'Data berhasil dihapus!');
+        } else {
+            Penerbit::where('id_penerbit', $id)->delete();
+            return redirect('/admin/kelolapenerbit')->with('success', 'Data berhasil dihapus!');
+        }
     }
 }
