@@ -24,8 +24,10 @@ class AdminController extends Controller
     public function indexbuku()
     {
         $buku = Buku::all();
+        $penerbit = Penerbit::all();
         return view('pages.buku', [
-            'listbuku' => $buku
+            'listbuku' => $buku,
+            'listpenerbit' => $penerbit
         ]);
     }
     public function indexpenerbit()
@@ -42,7 +44,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        // 
     }
 
     /**
@@ -53,7 +55,20 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        $buku = $request->validate([
+            'id_buku' => 'required',
+            'kategori' => 'required',
+            'nama_buku' => 'required',
+            'harga' => 'required',
+            'stok' => 'required',
+            'id_penerbit' => 'required'
+        ]);
+
+        // $validatedData['created_at'] = User::save(['timestamps' => FALSE]);
+        Buku::create($buku);
+
+        return redirect('/admin/kelolabuku')->with('success', 'Data berhasil dibuat!');
     }
 
     /**
@@ -87,7 +102,21 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // dd($id);
+        $buku = $request->validate([
+            'id_buku' => 'required',
+            'kategori' => 'required',
+            'nama_buku' => 'required',
+            'harga' => 'required',
+            'stok' => 'required',
+            'id_penerbit' => 'required'
+        ]);
+
+        // $validatedData['created_at'] = User::save(['timestamps' => FALSE]);
+        Buku::where('id_buku', $id)
+            ->update($buku);
+
+        return redirect('/admin/kelolabuku')->with('success', 'Data berhasil diubah!');
     }
 
     /**
@@ -98,6 +127,8 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Buku::where('id_buku', $id)->delete();
+
+        return redirect('/admin/kelolabuku')->with('success', 'Data berhasil dihapus!');
     }
 }

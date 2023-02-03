@@ -26,6 +26,10 @@ Route::controller(AdminController::class)->group(function () {
     Route::get('/admin/kelolabuku', 'indexbuku');
     Route::get('/admin/kelolapenerbit', 'indexpenerbit');
 });
+
 Route::controller(PengadaanController::class)->group(function () {
     Route::get('/pengadaan', 'index');
 });
+
+Route::resource('/admin/aturbuku', AdminController::class);
+// Route::resource('/admin/aturbuku/{$id_buku}', AdminController::class);
