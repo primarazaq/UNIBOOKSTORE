@@ -11,7 +11,7 @@
     <div class="fixed h-screen w-screen pl-64">
         @include('components\toast')
         <div class="w-full h-full p-4 m-8 overflow-y-auto">
-            <div class="w-auto animate-fade mr-10">
+            <div class="w-auto animate-fade mr-10 mb-12">
                 <main class="w-auto">
                     @yield('content')
                 </main>
