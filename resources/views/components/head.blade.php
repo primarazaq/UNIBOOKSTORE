@@ -5,7 +5,7 @@
     <title>UNIBOOKSTORE</title>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <!-- Fonts -->
-    <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 
     <!--Regular Datatables CSS-->
     <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
@@ -14,7 +14,7 @@
     <style>
         /*Overrides for Tailwind CSS */
         body {
-            font-family: 'Nunito', sans-serif;
+            font-family: 'Montserrat', sans-serif;
         }
 
         /*Form fields*/
@@ -68,7 +68,7 @@
             /*font-bold*/
             border-radius: .25rem;
             /*rounded*/
-            background: blue !important;
+            background: rgb(45, 69, 255) !important;
             /*bg-indigo-500*/
             border: 1px solid transparent;
             /*border border-transparent*/
@@ -78,13 +78,13 @@
         .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
             color: #fff !important;
             /*text-white*/
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
+            box-shadow: 0 1px 3px 0 rgb(255, 255, 255), 0 1px 2px 0 rgb(255, 255, 255);
             /*shadow*/
             font-weight: 700;
             /*font-bold*/
             border-radius: .25rem;
             /*rounded*/
-            background: blue !important;
+            background: rgb(45, 69, 255) !important;
             /*bg-indigo-500*/
             border: 1px solid transparent;
             /*border border-transparent*/
@@ -101,26 +101,26 @@
         /*Change colour of responsive icon*/
         table.dataTable.dtr-inline.collapsed>tbody>tr>td:first-child:before,
         table.dataTable.dtr-inline.collapsed>tbody>tr>th:first-child:before {
-            background-color: blue !important;
+            background-color: rgb(45, 69, 255) !important;
             /*bg-indigo-500*/
         }
     </style>
     @vite('resources/css/app.css')
 
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-<!-- jQuery -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<!--Datatables -->
-<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
-<script>
-    $(document).ready(function() {
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!--Datatables -->
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script>
+        $(document).ready(function() {
 
-        var table = $('#TBtaskComplt').DataTable({
-                responsive: true
-            })
-            .columns.adjust()
-            .responsive.recalc();
-    });
-</script> 
+            var table = $('#TBtaskComplt').DataTable({
+                    responsive: true
+                })
+                .columns.adjust()
+                .responsive.recalc();
+        });
+    </script>
 </head>
