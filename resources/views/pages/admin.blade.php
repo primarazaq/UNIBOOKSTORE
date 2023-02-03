@@ -26,7 +26,137 @@
             </li>
         </ol>
     </nav>
-    <div class="flex items-center w-screen min-h-screen mt-14" style="font-family: 'Muli', sans-serif;">
+    <div class="flex flex-col">
+
+
+        <div class=" text-gray-900 mb-5">
+            <div class="flex justify-between">
+                <div class="mb-3 ml-3 font-extrabold">
+                    <h3>Tabel Buku</h3>
+                </div>
+                @include('components.addBuku')
+            </div>
+            <!--Container-->
+            <div class="container w-fit xl:w-auto mx-auto px-2">
+
+                <!--Card-->
+                <div id='recipients' class="p-8 lg:mt-0 rounded-lg shadow-lg bg-white border-2">
+                    <table id="TBtaskComplt" class="stripe hover text-center w-full "
+                        style="padding-top: 1em;  padding-bottom: 1em;">
+                        <thead>
+                            <tr>
+                                <th data-priority="1">No</th>
+                                <th data-priority="2">ID Buku</th>
+                                <th data-priority="3">Kategori</th>
+                                <th data-priority="4">Nama Buku</th>
+                                <th data-priority="5">Harga</th>
+                                <th data-priority="6">Stok</th>
+                                <th data-priority="7">Penerbit</th>
+                                <th data-priority="8">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($listbuku as $data)
+                                <tr class="bg-white border-b ">
+
+                                    <th scope="row" class="py-4 px-6">
+                                        {{ $loop->iteration }}
+                                    </th>
+                                    <td class="py-4 px-6">
+                                        {{ $data->id_buku }}
+                                    </td>
+                                    <td class="py-4 px-6">
+                                        {{ $data->kategori }}
+                                    </td>
+                                    <td class="py-4 px-6">
+                                        {{ $data->nama_buku }}
+                                    </td>
+                                    <td class="py-4 px-6">
+                                        {{ $data->harga }}
+                                    </td>
+                                    <td class="py-4 px-6">
+                                        {{ $data->stok }}
+                                    </td>
+                                    <td class="py-4 px-6">
+                                        {{ $data->penerbit->nama }}
+                                    </td>
+                                    <td class="py-4 px-6">
+                                        <div class="flex mx-auto justify-center">
+                                            @include('components.editBuku')
+                                            @include('components.delBuku')
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+                <!--/Card-->
+            </div>
+        </div>
+        <hr>
+        <div class=" text-gray-900 mt-5">
+            <div class="flex justify-between">
+                <div class="mb-3 ml-3 font-extrabold">
+                    <h3>Tabel Penerbit</h3>
+                </div>
+                @include('components.addPenerbit')
+            </div>
+            <!--Container-->
+            <div class="container w-full xl:w-auto mx-auto px-2">
+
+                <!--Card-->
+                <div id='recipients' class="p-8 lg:mt-0 rounded-lg shadow-lg bg-white border-2">
+                    <table id="TBtaskComplt2" class="stripe hover text-center w-full "
+                        style="padding-top: 1em;  padding-bottom: 1em;">
+                        <thead>
+                            <tr>
+                                <th data-priority="1">No</th>
+                                <th data-priority="2">ID Penerbit</th>
+                                <th data-priority="3">Nama</th>
+                                <th data-priority="4">Alamat</th>
+                                <th data-priority="5">Kota</th>
+                                <th data-priority="6">Telepon</th>
+                                <th data-priority="7">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($listpenerbit as $data)
+                                <tr class="bg-white border-b ">
+
+                                    <th scope="row" class="py-4 px-6">
+                                        {{ $loop->iteration }}
+                                    </th>
+                                    <td class="py-4 px-6">
+                                        {{ $data->id_penerbit }}
+                                    </td>
+                                    <td class="py-4 px-6">
+                                        {{ $data->nama }}
+                                    </td>
+                                    <td class="py-4 px-6 text-left" style="width:22%">
+                                        {{ $data->alamat }}
+                                    </td>
+                                    <td class="py-4 px-6">
+                                        {{ $data->kota }}
+                                    </td>
+                                    <td class="py-4 px-6">
+                                        {{ $data->telepon }}
+                                    </td>
+                                    <td class="py-4 px-6">
+                                        <div class="flex mx-auto justify-center">
+                                            @include('components.editPenerbit')
+                                            @include('components.delPenerbit')
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- <div class="flex items-center w-screen min-h-screen mt-14" style="font-family: 'Muli', sans-serif;">
         <div class="container ml-auto mr-auto -mt-96 flex flex-wrap items-start">
             <div class="w-full md:w-1/2 lg:w-1/4 pl-5 pr-5 mb-5 lg:pl-2 lg:pr-2">
                 <div
@@ -69,5 +199,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 @endsection

@@ -5,7 +5,7 @@
     <title>UNIBOOKSTORE</title>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <!-- Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 
     <!--Regular Datatables CSS-->
     <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
@@ -14,13 +14,13 @@
     <style>
         /*Overrides for Tailwind CSS */
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         /*Form fields*/
         .dataTables_wrapper select,
         .dataTables_wrapper .dataTables_filter input {
-            color: #4a5568;
+            color: #000000;
             /*text-gray-700*/
             padding-left: 1rem;
             /*pl-4*/
@@ -117,9 +117,14 @@
         $(document).ready(function() {
 
             var table = $('#TBtaskComplt').DataTable({
-                    responsive: true
+                    responsive: false
                 })
-                .columns.adjust()
+                // .columns.adjust()
+                .responsive.recalc();
+            var table = $('#TBtaskComplt2').DataTable({
+                    responsive: false
+                })
+                // .columns.adjust()
                 .responsive.recalc();
         });
     </script>

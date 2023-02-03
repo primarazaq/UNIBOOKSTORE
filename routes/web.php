@@ -23,8 +23,8 @@ Route::controller(BukuController::class)->group(function () {
 });
 Route::controller(AdminController::class)->group(function () {
     Route::get('/admin', 'index');
-    Route::get('/admin/kelolabuku', 'indexbuku');
-    Route::get('/admin/kelolapenerbit', 'indexpenerbit');
+    // Route::get('/admin/kelolabuku', 'indexbuku');
+    // Route::get('/admin/kelolapenerbit', 'indexpenerbit');
 });
 
 Route::controller(PengadaanController::class)->group(function () {

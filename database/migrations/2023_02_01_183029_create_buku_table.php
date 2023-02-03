@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('harga');
             $table->integer('stok');
             $table->string('id_penerbit');
-            $table->foreign('id_penerbit')->references('id_penerbit')->on('penerbit');
+            $table->foreign('id_penerbit')->references('id_penerbit')->on('penerbit')->onDelete('restrict')->onUpdate('cascade');
         });
     }
 

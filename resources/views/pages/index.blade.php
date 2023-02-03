@@ -27,7 +27,7 @@
             </li>
         </ol>
     </nav>
-    <div class="w-full text-gray-900">
+    <div class=" text-gray-900">
         <div class="mb-3 ml-3 font-extrabold">
             <h3>Tabel Buku</h3>
         </div>
