@@ -56,13 +56,13 @@
                                 <th class="py-4 px-6">
                                     {{ $loop->iteration }}
                                 </th>
-                                <td class="py-4 px-6">
+                                <td class="py-4 px-6 text-left">
                                     {{ $data->id_buku }}
                                 </td>
-                                <td class="py-4 px-6">
+                                <td class="py-4 px-6 text-left">
                                     {{ $data->kategori }}
                                 </td>
-                                <td class="py-4 px-6">
+                                <td class="py-4 px-6 text-left">
                                     {{ $data->nama_buku }}
                                 </td>
                                 <td class="py-4 px-6">
@@ -71,7 +71,7 @@
                                 <td class="py-4 px-6">
                                     {{ $data->stok }}
                                 </td>
-                                <td class="py-4 px-6">
+                                <td class="py-4 px-6 text-left">
                                     {{ $data->penerbit->nama }}
                                 </td>
                             </tr>
