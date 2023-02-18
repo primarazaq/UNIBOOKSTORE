@@ -5,7 +5,7 @@
     <nav class="flex bg-white mb-4 text-blue-700 py-3 px-5 rounded-lg" aria-label="Breadcrumb">
         <ol class="inline-flex items-center space-x-1 md:space-x-3">
             <li class="inline-flex items-center">
-                <a href="/home" class="text-sm text-blue-700 hover:text-gray-900 inline-flex items-center ">
+                <a href="/admin" class="text-sm text-blue-700 hover:text-gray-900 inline-flex items-center ">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-4 h-4 mr-2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -22,7 +22,6 @@
                             d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                             clip-rule="evenodd"></path>
                     </svg>
-                    {{-- <span class="text-gray-400 ml-1 md:ml-2 text-sm font-medium dark:text-gray-500">Admin</span> --}}
                 </div>
             </li>
         </ol>
@@ -66,10 +65,10 @@
                                     <td class="py-4 px-6">
                                         {{ $data->id_buku }}
                                     </td>
-                                    <td class="py-4 px-6">
+                                    <td class="py-4 px-6 text-left">
                                         {{ $data->kategori }}
                                     </td>
-                                    <td class="py-4 px-6">
+                                    <td class="py-4 px-6 text-left">
                                         {{ $data->nama_buku }}
                                     </td>
                                     <td class="py-4 px-6">
@@ -78,7 +77,7 @@
                                     <td class="py-4 px-6">
                                         {{ $data->stok }}
                                     </td>
-                                    <td class="py-4 px-6">
+                                    <td class="py-4 px-6 text-left">
                                         {{ $data->penerbit->nama }}
                                     </td>
                                     <td class="py-4 px-6">
@@ -131,7 +130,7 @@
                                     <td class="py-4 px-6">
                                         {{ $data->id_penerbit }}
                                     </td>
-                                    <td class="py-4 px-6">
+                                    <td class="py-4 px-6 text-left">
                                         {{ $data->nama }}
                                     </td>
                                     <td class="py-4 px-6 text-left" style="width:22%">

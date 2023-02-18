@@ -22,7 +22,6 @@
                             d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                             clip-rule="evenodd"></path>
                     </svg>
-                    {{-- <span class="text-gray-400 ml-1 md:ml-2 text-sm font-medium dark:text-gray-500">Admin</span> --}}
                 </div>
             </li>
         </ol>
@@ -54,10 +53,10 @@
                                 <th scope="row" class="py-4 px-6">
                                     {{ $loop->iteration }}
                                 </th>
-                                <td class="py-4 px-6">
+                                <td class="py-4 px-6 text-left">
                                     {{ $data->nama_buku }}
                                 </td>
-                                <td class="py-4 px-6">
+                                <td class="py-4 px-6 text-left">
                                     {{ $data->penerbit->nama }}
                                 </td>
                                 <td class="py-4 px-6">
